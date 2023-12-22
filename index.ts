@@ -8,14 +8,13 @@ import {card1} from "./full-card-data";
 import {card2} from "./full-card-data";
 import {card3} from "./full-card-data";
 import {card4} from "./full-card-data";
-const CommentRouter = require ("./routes/comments");
+import CommentRouter from "./routes/comments";
 
 dotenv.config();
 const uri = "mongodb+srv://mongo:H0Tfi7VW7m9yDlJR@cluster0.n5wdmcy.mongodb.net/?retryWrites=true&w=majority";
 const app: Express = express();
-// const port = process.env.PORT;
-const port = 8000;
-//
+const port = process.env.PORT;
+
 app.use(cors());
 // const client = new MongoClient(uri, {
 //     serverApi: {
@@ -51,7 +50,7 @@ app.use(cors());
 //     .catch( (err) => {
 //         console.error(`Error connecting to the database. ${err}`);
 //     })
-app.use('/upload', CommentRouter);
+app.use('/comment', CommentRouter);
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Express + TypeScript server');

@@ -1,21 +1,12 @@
 import * as os from "os";
-
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-
-const multer  = require('multer');
+import multer from 'multer';
 const upload = multer({ dest: os.tmpdir() });
-
-router.use((req: any, res: any, next: () => void) => {
-    console.log('Time: ', Date.now())
-    next()
-})
-router.post('/upload', upload.single('file'), function(req: {file: any; }, res: { sendStatus: (arg0: number) => void; }) {
+router.post('/upload', upload.single('file'), (req , res) =>  {
     const file = req.file;
-    
     console.log(file);
-
     res.sendStatus(200);
 });
 
-module.exports = router;
+export default router;
