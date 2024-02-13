@@ -1,13 +1,13 @@
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import dotenv from 'dotenv';
-import {cards} from "./dashboard-data";
-import {card1} from "./full-card-data";
-import {card2} from "./full-card-data";
-import {card3} from "./full-card-data";
-import {card4} from "./full-card-data";
-import CommentRouter from "./routes/comments";
-import { setUPConnection } from "./database/db";
+import {cards} from "./src/mocks/dashboard-data";
+import {card1} from "./src/mocks/full-card-data";
+import {card2} from "./src/mocks/full-card-data";
+import {card3} from "./src/mocks/full-card-data";
+import {card4} from "./src/mocks/full-card-data";
+import CommentRouter from "./src/routes/comments";
+import { setUPConnection } from "./src/database/db";
 
 dotenv.config();
 const app: Express = express();
