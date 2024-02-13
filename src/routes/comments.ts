@@ -18,28 +18,5 @@ router.post('/upload', upload.single('file'), async (req , res) =>  {
         res.status(500).send('Internal Server Error');
     }
 });
-// router.post('upload', (req, res) => {
-//     console.log('Function invoked');
-//     const imageData = req.body.image;
-//     const imageBuffer = Buffer.from(imageData.data, "base64");
-//     Image.create({
-//         name: imageData.name,
-//         type: imageData.type,
-//         data: imageBuffer,
-//     })
-//         .then(() => {
-//             res.status(201).json({
-//                 success: true,
-//                 message: "Image uploaded successfully",
-//             });
-//         })
-//         .catch((error) => {
-//             console.error(error);
-//             res.status(500).json({
-//                 success: false,
-//                 message: "Unable to upload image",
-//             });
-//         });
-// })
 
 export default router;
