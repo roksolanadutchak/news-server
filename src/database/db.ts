@@ -4,7 +4,8 @@ export function setUPConnection() {
     const url = process.env.DB_URL;
     const connectionParams= {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        dbName: 'news-application'
     }
 // @ts-ignore
     mongoose.connect(url, connectionParams)
